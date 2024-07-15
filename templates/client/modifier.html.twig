@@ -1,0 +1,20 @@
+{% block stylesheets %}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+   
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
+
+    {% endblock %}
+
+{% block title %}Modifier un client{% endblock %}
+
+{% block body %}
+    <h1>Modifier un client</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Modifier</button>
+    {{ form_end(form) }}
+{% endblock %}

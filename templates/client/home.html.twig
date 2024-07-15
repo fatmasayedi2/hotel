@@ -1,0 +1,42 @@
+{% block stylesheets %}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+   
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
+
+    {% endblock %}
+<h1>Liste des clients  | <small> <a href="{{ path('add_client')}}">Ajouter</a>
+</small></h1>
+
+
+<table class="table table-hover table-striped" border="1">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Date Arrivée</th>
+            <th>Date départ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.dateArrive|date('Y-m-d') }}</td>
+                <td>{{ client.dateDepart|date('Y-m-d') }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('modifier_client', {'id': client.id}) }}">modifier</a>
+                <a class="btn btn-success" href="{{ path('supprimer_client', {'id': client.id}) }}"> supprimer</a>
+                
+          
+                  </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

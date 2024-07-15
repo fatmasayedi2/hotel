@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un client{% endblock %}
+{% block body %}
+    <section class="site-hero overlay" style="background-image: url(../images/hero_4.jpg)" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row site-hero-inner justify-content-center align-items-center">
+                <div class="col-md-10 text-center" data-aos="fade-up">
+                    <br><br><br><br><br><br>
+                    <span class="custom-caption text-uppercase text-white d-block  mb-3">Welcome To 5 <span class="fa fa-star text-primary"></span>   Hotel</span>
+                    <h1 class="heading mb-3">Reservation Form</h1>
+                    <div style="color:blue;">
+                        {{ form_start(f) }}
+                        {{ form_row(f.nom) }}
+                        {{ form_row(f.nbr) }}
+                        {{ form_row(f.email) }}
+                        {{ form_row(f.dateArrive, {'label': 'Date d\'arrivée'}) }}
+                        {{ form_row(f.dateDepart, {'label': 'Date de départ'}) }}
+                        {{ form_row(f.valider) }}
+                        {{ form_end(f) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{# templates/hotel/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un Hôtel{% endblock %}
+
+{% block body %}
+    <h1>Modifier un Hôtel</h1>
+    {# Formulaire pour l'édition d'un hôtel #}
+    <form method="post">
+        {# Champs de formulaire pour les différentes propriétés de l'hôtel #}
+        <label for="nomHotel">Nom de l'Hôtel :</label>
+        <input type="text" id="nomHotel" name="nomHotel" value="{{ hotel.nomHotel }}" required><br><br>
+
+        <label for="capacite">Capacité :</label>
+        <input type="number" id="capacite" name="capacite" value="{{ hotel.capacite }}" required><br><br>
+
+        <label for="price">Prix :</label>
+        <input type="number" id="price" name="price" step="0.01" value="{{ hotel.price }}" required><br><br>
+
+        {# Autres champs à éditer pour l'hôtel #}
+
+        <input type="submit" value="Enregistrer les modifications">
+    </form>
+{% endblock %}
